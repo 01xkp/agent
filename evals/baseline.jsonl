@@ -1,0 +1,20 @@
+{"id":"concept-01","category":"基础概念","prompt":"请用不超过120字解释什么是 Token，并给出一个中文例子。","expectedSignals":["Token不是严格等于汉字或单词","提到模型处理文本的基本单位"]}
+{"id":"concept-02","category":"基础概念","prompt":"面向前端工程师解释上下文窗口，并说明超出窗口会有什么风险。","expectedSignals":["输入输出共享上下文限制","信息可能被截断或遗忘"]}
+{"id":"concept-03","category":"基础概念","prompt":"用直觉而非数学公式解释 Attention 的作用。","expectedSignals":["动态关注相关信息","不同位置之间建立关联"]}
+{"id":"concept-04","category":"基础概念","prompt":"解释 Embedding 与普通关键词的区别，并给一个适合 Embedding 的检索例子。","expectedSignals":["语义向量","语义相近但字面不同"]}
+{"id":"concept-05","category":"基础概念","prompt":"为什么大语言模型会产生幻觉？列出三个原因和两个工程缓解办法。","expectedSignals":["概率生成","缺少知识或上下文","检索或校验"]}
+{"id":"parameter-01","category":"参数","prompt":"Temperature 从 0.1 调到 1.2，通常会怎样影响输出？什么时候不应调高？","expectedSignals":["随机性或多样性提高","事实性或结构化任务不宜过高"]}
+{"id":"parameter-02","category":"参数","prompt":"Temperature 和 Top-p 有什么关系？给出初学者可执行的调参原则。","expectedSignals":["都影响采样","优先一次只改一个变量"]}
+{"id":"parameter-03","category":"参数","prompt":"停止条件有什么用途？请举一个生成 JSON 时使用停止条件的例子。","expectedSignals":["控制生成结束","避免多余文本"]}
+{"id":"reasoning-01","category":"边界判断","prompt":"用户问“今天上海天气如何”，模型只有训练知识且没有工具。应如何回答？","expectedSignals":["承认无法获得实时信息","建议查询实时来源或调用工具"]}
+{"id":"reasoning-02","category":"边界判断","prompt":"用户给出相互矛盾的两段资料并要求直接下结论。请展示一个可靠回答。","expectedSignals":["指出冲突","请求更多证据或分别说明"]}
+{"id":"reasoning-03","category":"边界判断","prompt":"解释为什么“回答很流畅”不等于“回答正确”，并给出验证办法。","expectedSignals":["语言流畅与事实正确分离","引用或外部校验"]}
+{"id":"engineering-01","category":"工程实践","prompt":"列出把 API Key 放在浏览器端的三个风险，以及正确的存放位置。","expectedSignals":["密钥泄露","滥用或费用风险","服务端环境变量"]}
+{"id":"engineering-02","category":"工程实践","prompt":"设计一个最小模型对比实验，要求只改变模型，不改变其他变量。","expectedSignals":["固定数据集","固定参数和 Prompt","记录延迟质量成本"]}
+{"id":"engineering-03","category":"工程实践","prompt":"为什么模型评测需要固定数据集？请说明随手问几个问题的缺点。","expectedSignals":["可重复","可比较","样本偏差"]}
+{"id":"engineering-04","category":"工程实践","prompt":"给 CLI Chat 设计五个最重要的错误处理场景。","expectedSignals":["鉴权失败","限流","超时","服务端错误","网络中断"]}
+{"id":"communication-01","category":"表达能力","prompt":"用给产品经理听得懂的话解释模型速度、能力、价格三者权衡。","expectedSignals":["不存在所有维度都最佳","按任务选择"]}
+{"id":"communication-02","category":"表达能力","prompt":"把“LLM 是下一个词预测器”解释给没有技术背景的人，避免夸大。","expectedSignals":["基于上下文预测","不等同真正理解或事实数据库"]}
+{"id":"coding-01","category":"代码理解","prompt":"阅读伪代码 response = model(messages, temperature=0.2)，说明每个输入和输出的职责。","expectedSignals":["messages承载上下文","temperature控制采样","response是模型生成结果"]}
+{"id":"coding-02","category":"代码理解","prompt":"一个流式接口总耗时5秒、首Token耗时0.4秒。两个指标分别说明什么？","expectedSignals":["首Token影响感知响应速度","总耗时反映完整生成时间"]}
+{"id":"reflection-01","category":"复盘","prompt":"学习者完成一次模型对比后，应该记录哪些信息才能让实验可复现？","expectedSignals":["模型版本","Prompt或数据集版本","参数","时间和环境"]}

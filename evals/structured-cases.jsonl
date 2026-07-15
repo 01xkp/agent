@@ -1,0 +1,5 @@
+{"id":"structured-001","input":"本周五准备上线 AI Chat Workbench，李明负责周四前完成回归测试。第三方模型接口偶尔超时，价格表还没确认。","expectedTaskSignals":["完成回归测试"],"expectedRiskSignals":["接口偶尔超时","价格表还没确认"]}
+{"id":"structured-002","input":"客服知识库下周开始整理，王芳负责导入前 30 篇 FAQ，截止时间是下周三。权限分组方案还没有确定。","expectedTaskSignals":["导入前 30 篇 FAQ"],"expectedRiskSignals":["权限分组方案还没有确定"]}
+{"id":"structured-003","input":"今天只讨论了是否增加网页端停止生成按钮，暂时没有确定负责人，也没有确定上线时间。","expectedTaskSignals":[],"expectedRiskSignals":["没有负责人","没有上线时间"]}
+{"id":"structured-004","input":"张强确认明天完成 Dockerfile，赵敏负责补充部署文档。当前生产环境端口由运维确认中。","expectedTaskSignals":["完成 Dockerfile","补充部署文档"],"expectedRiskSignals":["端口由运维确认中"]}
+{"id":"structured-005","input":"Prompt 评测已经跑完 9 组用例，但人工评分表还没填写。下一步需要周五前完成评分并记录结论。","expectedTaskSignals":["完成评分","记录结论"],"expectedRiskSignals":["人工评分表还没填写"]}

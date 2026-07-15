@@ -1,0 +1,81 @@
+{
+  "name": "ai-agent-learning",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "chat": "tsx --env-file=.env src/cli.ts",
+    "chain": "tsx --env-file=.env src/prompt-chain-cli.ts",
+    "structure": "tsx --env-file=.env src/structured-cli.ts",
+    "dev": "concurrently -k -n server,web -c cyan,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "tsx watch --env-file=.env src/server-entry.ts",
+    "dev:web": "vite",
+    "desktop:prepare": "install-electron --no",
+    "desktop:dev": "npm run desktop:prepare && electron-vite dev",
+    "build": "npm run build:server && npm run build:web",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:web": "vue-tsc --noEmit -p tsconfig.web.json && vite build",
+    "build:desktop": "npm run typecheck && npm run desktop:prepare && electron-vite build && electron-builder --dir",
+    "package:desktop": "npm run typecheck && npm run desktop:prepare && electron-vite build && electron-builder",
+    "start": "node --env-file=.env dist/src/server-entry.js",
+    "eval": "tsx --env-file=.env src/evaluate.ts",
+    "eval:prompts": "tsx --env-file=.env src/prompt-evaluate.ts",
+    "eval:structured": "tsx --env-file=.env src/structured-evaluate.ts",
+    "eval:learning": "tsx src/learning-evaluate.ts",
+    "python:check": "python -m compileall -q services/fastapi-teaching",
+    "python:test": "python -m unittest discover services/fastapi-teaching",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit && vue-tsc --noEmit -p tsconfig.web.json",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "check": "npm run lint && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.110.0",
+    "@cloudbase/js-sdk": "3.6.2",
+    "@imgly/background-removal": "1.7.0",
+    "mammoth": "1.12.0",
+    "openai": "6.45.0",
+    "pptxgenjs": "4.0.1",
+    "ws": "8.21.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.2",
+    "@types/node": "20.19.43",
+    "@vitejs/plugin-vue": "6.0.7",
+    "concurrently": "10.0.3",
+    "electron": "43.1.0",
+    "electron-builder": "26.15.3",
+    "electron-vite": "5.0.0",
+    "element-plus": "2.14.2",
+    "tsx": "4.22.5",
+    "typescript": "6.0.3",
+    "vite": "7.3.6",
+    "vue": "3.5.39",
+    "vue-tsc": "3.3.6"
+  },
+  "build": {
+    "appId": "com.csfan.workbench",
+    "productName": "CS 凡",
+    "asar": true,
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "CS-Fan-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

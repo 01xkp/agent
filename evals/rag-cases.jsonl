@@ -1,0 +1,3 @@
+{"id":"rag-login-001","query":"验证码一直失败怎么处理？","role":"viewer","expectedChunkIds":["doc-login#0"]}
+{"id":"rag-refund-001","query":"退款超过三天没有完成怎么办？","role":"support","expectedChunkIds":["doc-refund#0"]}
+{"id":"rag-security-001","query":"客服回答里可以展示 SecretKey 吗？","role":"viewer","expectedChunkIds":["doc-security#0"]}

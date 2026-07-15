@@ -1,0 +1,28 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+node_modules/
+dist/
+dist-electron/
+release/
+.env
+evals/results/
+*.log
+.eval-current.*
+.prompt-current.*
+x.model
+.venv/
+__pycache__/
+*.py[cod]

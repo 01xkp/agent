@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.env
+evals/results
+*.log
+.eval-current.*
+.prompt-current.*
+x.model
