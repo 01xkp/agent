@@ -106,14 +106,6 @@ npm run python:test
 | `npm run eval:learning` | 运行 Week 2–9 固定评测 |
 | `npm run build` / `npm start` | 本地生产构建与启动 |
 
-## 先读哪份文档
-
-1. [项目全景与架构](docs/architecture.md)：为什么做、模块作用和完整数据流；
-2. [配置参数说明](docs/configuration.md)：改每个参数会发生什么；
-3. [Agent 小白白话指南](docs/agent-beginner-guide.md)：用生活类比讲清每个 Agent 知识点和对应源码；
-4. [文档导航](docs/README.md)：按运行、学习、测试、部署查找专题；
-5. [故障排查](docs/troubleshooting.md)：聊天慢、接口失败和部署问题。
-
 ## 核心目录
 
 ```text
